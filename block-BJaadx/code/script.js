@@ -22,7 +22,7 @@ console.log(document.body.children[5].children.length)
 let emailInput = document.querySelector('input')
 
 // 5. Select the ul element using class selector and store in `topics`
-let topics = document.querySelector('ul')
+let topics = document.querySelector('.topics')
 
 // 6. Select the first label element and store in `label`
 let label = document.querySelector('label')
