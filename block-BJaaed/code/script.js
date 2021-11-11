@@ -119,28 +119,28 @@
 
 
 
-  let ul = document.querySelector('ul')
-  books.forEach(book => {
-      let li = document.createElement('li');
-      let div= document.createElement('div')
-      let img = document.createElement('img');
-      let h2 = document.createElement('h2');
-      let h5 = document.createElement('h5');
-      let btn = document.createElement('a');
-      btn.href ="";
-      img.src = book.image;
-      h2.innerText= (book.title);
-      h5.innerText = `Author : ${book.author}`;
-      btn.innerText = "Buy Now";
-      div.append(img)
-      li.append(div,h2,h5,btn);
-      ul.append(li);
-  });
+    let ul = document.querySelector('ul')
+    books.forEach(book => {
+        let li = document.createElement('li');
+        let div= document.createElement('div')
+        let img = document.createElement('img');
+        let h2 = document.createElement('h2');
+        let p = document.createElement('p');
+        let btn = document.createElement('a');
+        let span =  document.createElement("span")
+        let authorName = document.createTextNode(book.author)
+        span.append(authorName)
+  
+        btn.href ="";
+        img.src = book.image;
+        img.alt = book.title;
+        h2.innerText= (book.title);
+        p.innerText = `Author:`;
+        p.append(span);
+        btn.innerText = "Buy Now";
+        btn.href = book.website;
+        div.append(img)
+        li.append(div,h2,p,btn);
+        ul.append(li);
+    });
 
-// books.forEach(book => {
-//     let li = document.createElement('li');
-//     let img = document.createElement('img');
-//     img.src = book.image;
-//     li.append(img);
-//     ul.append(li);
-// });
