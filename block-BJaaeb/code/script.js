@@ -8,8 +8,11 @@ default value to be "text" and return the input element inside label. (create it
 // Your code goes here
 let createInputElm = (la,type = "text") => {
   let label = document.createElement('label');
-   label.append(`${la}: <input type="${type}">`)
-  return label
+  let input = document.createElement('input')
+  input.type = type;
+  label.innerText = labelMessage;
+  label.append(input);
+  return label;
   }
 
 // TEST
@@ -24,6 +27,11 @@ let createInputElm = (la,type = "text") => {
    label.append(`${la}: <input type="${type}">`)
   return label
   }
+
+function createInputElm(labelMessage, type="text"){
+  let html = `<label>${labelMessage} <input type="${type}"></label>`
+  return html;
+}
 // TEST
 createInputElm('Your name'); //<label>Your name: <input type="text"></label>
 createInputElm('Your age', 'number'); //<label>Your age: <input type="number"></label>
@@ -39,6 +47,15 @@ li.append(ele)
  ul.append(li)})
   return ul
   }
+
+// function createList(data = []){
+//   let html = `<ul>
+//    ${data.map((elm) => `<li>${elm}</li>`).join("")}  //join because we have to change array in string
+//    </ul>`;
+// return html;
+// }
+// to push inside dom 
+// document.body.innerHTML = createList(['ALABAMA', 'ALASKA', 'HAWAII', 'KENTUCKY']);
 
 // TEST
 createList(['ALABAMA', 'ALASKA', 'HAWAII', 'KENTUCKY']);
