@@ -19,22 +19,28 @@ let allHrsArray = Array.from(allHrs)
 // let AllHrsArray = [...allHrs]
 
 // Set the border of the all the hr elements to "1px solid tomato"
-allHrsArray.map((a)=> a.style.border = '1px solid tomato' )
+allHrsArray.forEach((a)=> a.style.border = '1px solid tomato' )
 // Change the background of all the hr to "antiquewhite" using for of loop.
-allHrsArray.map((a)=> a.style.background = "antiquewhite" )
+allHrsArray.forEach((a)=> a.style.background = "antiquewhite" )
+allHrsArray.forEach((a)=> a.style.backgroundColor= "antiquewhite" )
 // Change the 'border-radius' of all the hr to "5px" using array.
-allHrsArray.map((a)=> a.style['border-radius'] = "50px" )
+allHrsArray.forEach((a)=> a.style['border-radius'] = "5px" )
+//bhaiya code 
+allHrsArray.forEach((a)=> a.style.borderRadius = "5px")
+
 // Change the alignment of the heading(h1) to center.
 heading.style.textAlign = 'center';
 // Change the font size of the heading to 3rem.
 heading.style.fontSize = '3rem'
 // Change the border of hr with class 'image' to `2px solid purple`.
-let firstHr = document.querySelector('.image').style.border = `2px solid purple`
+document.querySelectorAll('hr.image').forEach(elm => elm.style.border = `2px solid purple`)
 // Hide the box number 17 (last box).
 let seventeenBox = document.querySelector('.seventeen')
-seventeenBox.style.display = 'none'
+seventeenBox.style.display = 'none';
 // Change the border of all the hr element from solid to dashed type
-allHrsArray.map((a)=> a.style['border-style'] = 'dashed' )
+allHrsArray.forEach((a)=> a.style['border-style'] = 'dashed' )
+// allHrsArray.forEach((a)=> a.style.borderStyle = 'dashed' )
+
 // Create a pragraph element and store it in variable named 'para' using `createElement`
 let para = document.createElement('p')
 // Change the inner text of para to "querySelector returns an element you can maupulate but querySelectorAll returns the collection of elements in array kind of structure."
@@ -43,6 +49,7 @@ para.innerText = "querySelector returns an element you can maupulate but querySe
 let box1= document.querySelector('.one')
 // box1.children[0].remove();
 // box1.children[0].remove();
+box1.innerHTML = "";
 
 // Replace all the elements inside box 1 with the para (you created above)
 box1.append(para)
@@ -79,8 +86,10 @@ console.log(box16.lastElementChild);
 // Select box 2 and append a new paragraph element with content "Append inserts as last child" just after hr element.
 let box2 = document.querySelector('.two');
 let para2 =  document.createElement('p');
-para2.innerText = "Append inserts as last child"
-box2.prepend(para2);
+// para2.innerText = "Append inserts as last child"
+let text = document.createTextNode('Append inserts as last child');
+// box2.append(para2);
+para2.append(text);
 // Select box 3 and prepend a new paragraph element with content "Prepend inserts as first child" just before hr element.
 let box3 = document.querySelector(".three");
 let para3 =  document.createElement('p');
@@ -111,7 +120,8 @@ document.body.style.background = 'bisque'
 // Create a button and store it in a variable named 'btn'
 let btn = document.createElement("button")
 // textContent of the button should be 'Click Me'
-btn.innerText = 'Click Me'
+btn.innerText = 'Click Me';
+// btn.textContent ='Click Me';
 // Change the background of the btn to 'oldlace'
 btn.style.background = "oldlace"
 // Change the font size of the btn to 1rem
@@ -130,10 +140,11 @@ let imgElm = document.createElement('img')
 let box7 = document.querySelector('.seven')
 
 // Remove all the elements form box seven
-let box7length = box7.children.length
-for(let i=0;i<box7length;i++){
-  box7.children[0].remove()
-}
+// let box7length = box7.children.length
+// for(let i=0;i<box7length;i++){
+//   box7.children[0].remove()
+// }
+box7.innerHTML="";
 // Append the imgElm to the box no 7
 box7.append(imgElm)
 // Change the width and height of the image to `100%`
@@ -152,9 +163,9 @@ box5.append(input)
 let brand = document.createElement("a")
 brand.innerText = 'AltCampus'
 let google = document.createElement("a")
-brand.innerText = `Google`
+google.innerText = `Google`
 // Change the href property of the anchor elements to `https://altcampus.school` and `https://google.com`
 brand.href = `https://altcampus.school`
 google.href = `https://google.com`
 // Append both the elements to box 5 you selected above.
-box5.append(brand,google)
+box5.append(brand, " " ,google)
